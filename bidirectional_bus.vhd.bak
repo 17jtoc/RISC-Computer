@@ -1,0 +1,49 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY bus IS
+	PORT(
+	bm0, bm1, bm2, bm3, bm4, bm5, bm6, bm7, bm8, bm9, bm10, bm11, bm12, bm13, bm14, bm15,
+	bmHI, bmLO, bmZHIGH, bmZLOW, bmPC, bmMDR, bmIP, cSE : IN_STD_LOGIC_VECTOR(31 DOWNTO 0);
+	eIN : IN_STD_LOGIC_VECTOR(4 DOWNTO 0);
+	bmOUT : OUT_STD_LOGIC_VECTOR(31 DOWNTO 0);
+	)
+END bus;
+
+ARCHITECTURE behavioral OF bus IS
+BEGIN
+	BUSMUX:
+	PROCESS(bm0, bm1, bm2, bm3, bm4, bm5, bm6, bm7, bm8, bm9, bm10, bm11, bm12, bm13, bm14, bm15,
+	bmHI, bmLO, bmZHIGH, bmZLOW, bmPC, bmMDR, bmIP, cSE, eIN)
+	BEGIN
+		CASE eIN IS
+			when "00000" => output <= bm0;
+			when "00001" => output <= bm1;
+			when "00010" => output <= bm2;
+			when "00011" => output <= bm3;
+			when "00100" => output <= bm4;
+			when "00101" => output <= bm5;
+			when "00110" => output <= bm6;
+			when "00111" => output <= bm7;
+			when "01000" => output <= bm8;
+			when "01001" => output <= bm9;
+			when "01010" => output <= bm10;
+			when "01011" => output <= bm11;
+			when "01100" => output <= bm12;
+			when "01101" => output <= bm13;
+			when "01110" => output <= bm14;
+			when "01111" => output <= bm15;
+			when "10000" => output <= bmHI;
+			when "10001" => output <= bmLO;
+			when "10010" => output <= bmZHIGH;
+			when "10011" => output <= bmZLOW;
+			when "10100" => output <= bmPC;
+			when "10101" => output <= bmMDR;
+			when "10110" => output <= bmIP;
+			when "10111" => output <= cSE;
+			
+		END CASE;
+	END PROCESS;
+END behavioral;
+		
+			

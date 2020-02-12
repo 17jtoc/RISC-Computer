@@ -1,0 +1,16 @@
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_signed.all
+
+ENTITY carry_lookahead_one IS
+	PORT(
+	A, B : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+	OpCode : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+	Y : OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
+	);
+END alu;
+
+ARCHITECTURE behavioral OF carry_lookahead_one IS
+
+
+	

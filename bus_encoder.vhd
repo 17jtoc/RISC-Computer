@@ -3,7 +3,7 @@ USE ieee.std_logic_1164.ALL;
 
 ENTITY bus_encoder IS
 	PORT(
-	r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15,
+	zeror, oner, twor, threer, fourr, fiver, sixr, sevenr, eightr, niner, tenr, elevenr, twelver, thirteenr, fourteenr, fifteenr,
 	hiOUT, loOUT, zhighOUT, zlowOUT, pcOUT, mdrOUT, ipOUT, cOUT : IN STD_LOGIC;
 	eOUT : OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
 	);
@@ -12,11 +12,11 @@ END bus_encoder;
 ARCHITECTURE behavioral OF bus_encoder IS
 BEGIN
 	BUS_ENCODER:
-	PROCESS(r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15,
+	PROCESS(zeror, oner, twor, threer, fourr, fiver, sixr, sevenr, eightr, niner, tenr, elevenr, twelver, thirteenr, fourteenr, fifteenr,
 	hiOUT, loOUT, zhighOUT, zlowOUT, pcOUT, mdrOUT, ipOUT, cOUT)
-	variable input : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	variable input : STD_LOGIC_VECTOR(23 DOWNTO 0);
 	BEGIN
-		input := (r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15,
+		input := (zeror, oner, twor, threer, fourr, fiver, sixr, sevenr, eightr, niner, tenr, elevenr, twelver, thirteenr, fourteenr, fifteenr,
 		hiOUT, loOUT, zhighOUT, zlowOUT, pcOUT, mdrOUT, ipOUT, cOUT);
 		CASE input IS
 			when "100000000000000000000000" => eOUT <= "00000";

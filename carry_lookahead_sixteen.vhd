@@ -15,7 +15,7 @@ ARCHITECTURE behavioral OF carry_lookahead_sixteen IS
 
 COMPONENT carry_lookahead_one
 PORT(
-	A, B, CIn : IN STD_LOGIC;
+	A, B, C : IN STD_LOGIC;
 	G, P, S : OUT STD_LOGIC);
 END COMPONENT;
 

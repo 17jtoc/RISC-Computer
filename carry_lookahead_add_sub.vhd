@@ -51,11 +51,13 @@ SIGNAL N : STD_LOGIC_VECTOR(31 DOWNTO 0);
 
 BEGIN
 	
-	NEG : negate PORT MAP(B(31 downto 0), N(31 downto 0));
+	--NEG : negate PORT MAP(B(31 downto 0), N(31 downto 0));
 	
 	PROCESS(SUB, B, N)
 	BEGIN
-		IF SUB = '0' THEN
+		IF SUB = '1' THEN
+			N <= (NOT B) + "00000000000000000000000000000001";
+		ELSE
 			N <= B;
 		END IF;
 	END PROCESS;

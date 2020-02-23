@@ -13,7 +13,7 @@ BEGIN
 	PROCESS(CLR,CLK,WRT,D)
 	BEGIN
 		IF CLR = '1' THEN
-				Q <= x"0000000";
+				Q <= x"00000000";
 		ELSIF (rising_edge(CLK) AND WRT = '1') THEN
 				Q <= D;
 		END IF;

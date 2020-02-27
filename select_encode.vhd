@@ -5,7 +5,8 @@ ENTITY select_encode IS
 PORT(
 IR : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 Gra, Grb, Grc, Rin, Rout, BAout : IN STD_LOGIC;
-R0in, R0out: OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+R0in, R0out: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+C_sign_extended : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
 );
 END ENTITY;
 
@@ -31,6 +32,7 @@ BEGIN
 		temp2 <= "00000000000000" & IR(17 DOWNTO 0);
 	END IF;
 	
+	C_sign_extended <= temp2;
 	
 	case gr_or is
 		when "0000" =>

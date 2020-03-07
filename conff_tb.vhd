@@ -5,7 +5,7 @@ ENTITY conff_tb IS
 END ENTITY;
 
 ARCHITECTURE behavioural OF conff_tb IS
-	COMPONENT select_encode_block
+	COMPONENT con_ff_block
 		PORT(
 		bus_in :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
 		ir_in :  IN  STD_LOGIC_VECTOR(1 DOWNTO 0);
@@ -19,7 +19,7 @@ ARCHITECTURE behavioural OF conff_tb IS
 	
 	BEGIN
 	
-	sel_map : select_encode_block
+	sel_map : con_ff_block
 	PORT MAP(
 		bus_in => busin_tb,
 		ir_in => ir_tb,
